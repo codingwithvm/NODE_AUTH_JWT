@@ -1,6 +1,7 @@
 // Node imports
 import dotEnv from 'dotenv'
 import express from 'express'
+import cors from "cors"
 
 // App imports
 import getUserByIdController from './controllers/getUserByIdController.js'
@@ -15,6 +16,13 @@ const app = express()
 
 // Middlewares
 app.use(express.json())
+
+const corsOptions = {
+    origin: '*',
+    optionsSuccessStatus: 200
+}
+
+app.use(cors(corsOptions))
 
 // Private Route
 app.get('/user/:id', checkToken, getUserByIdController)
