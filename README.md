@@ -1,6 +1,4 @@
-# Sua API
-
-Uma descrição breve da sua API.
+# NODE AUTHENTICATION JWT
 
 ## Instalação
 
