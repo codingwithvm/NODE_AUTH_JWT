@@ -19,17 +19,13 @@ async function loginController(req, res) {
                     // Aqui fazemos uma comparação entre com a senha digitada e a senha cadastrada no banco de dados, retorna um valor bool
                     if (passResponse) {
                         // Login
-                        try {
-                            const secret = process.env.SECRET
+                        const secret = process.env.SECRET
 
-                            const token = jwt.sign({
-                                id: response.userEmail
-                            }, secret)
+                        const token = jwt.sign({
+                            id: response.userEmail
+                        }, secret)
 
-                            return res.status(200).json({ msg: "Autenticação realizada com sucesso", token, user: { email: response.userEmail, name: userName } })
-                        } catch (e) {
-                            console.log(e)
-                        }
+                        return res.status(200).json({ msg: "Autenticação realizada com sucesso", token, user: { email: response.userEmail, name: userName } })
                     }
 
                     // Se a senha estiver incorreta
