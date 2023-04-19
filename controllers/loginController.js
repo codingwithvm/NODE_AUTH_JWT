@@ -30,7 +30,6 @@ async function loginController(req, res) {
                         } catch (e) {
                             console.log(e)
                         }
-                        return res.status(200).json({ msg: "Logado com sucesso" })
                     }
 
                     // Se a senha estiver incorreta
