@@ -26,7 +26,7 @@ async function loginController(req, res) {
                                 id: response.userEmail
                             }, secret)
 
-                            return res.status(200).json({ msg: "Autenticação realizada com sucesso", token })
+                            return res.status(200).json({ msg: "Autenticação realizada com sucesso", token, user: { email: response.userEmail, name: userName } })
                         } catch (e) {
                             console.log(e)
                         }
